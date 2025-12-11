@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR" style="overscroll-behavior-x: none; overflow-x: hidden;">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logos/logotipo X88 green.fw.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="description" content="X88 Colaborador - Solicite adiantamentos facilmente" />
+    <meta name="theme-color" content="#000000" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="application-name" content="X88 Colaborador" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#4dff7a" />
+    <meta name="apple-mobile-web-app-title" content="X88" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/logos/logotipo X88 green.fw.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/logos/logotipo X88 green.fw.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/logos/logotipo X88 green.fw.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/logos/logotipo X88 green.fw.png" />
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    
+    <!-- Script para definir status bar antes do app carregar -->
+    <script>
+      try {
+        const hasBanners = localStorage.getItem('x88_has_banners') === 'true';
+        const metaStatus = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+        const metaTheme = document.querySelector('meta[name="theme-color"]');
+        
+        if (hasBanners) {
+          // COM BANNER: Preto
+          if (metaStatus) metaStatus.setAttribute('content', '#000000');
+          if (metaTheme) metaTheme.setAttribute('content', '#000000');
+          document.documentElement.style.backgroundColor = 'transparent';
+        } else {
+          // SEM BANNER: Verde
+          if (metaStatus) metaStatus.setAttribute('content', '#4dff7a');
+          if (metaTheme) metaTheme.setAttribute('content', '#4dff7a');
+          document.documentElement.style.backgroundColor = 'transparent';
+        }
+      } catch (e) {
+        console.error('Erro ao definir status bar inicial:', e);
+      }
+    </script>
+    
+    <title>X88 Colaborador</title>
+    <style>
+      html, body {
+        overscroll-behavior-x: none !important;
+        overflow-x: hidden !important;
+        touch-action: pan-y !important;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-8ad80384.js"></script>
+    <link rel="stylesheet" href="/assets/index-7b07c0a1.css">
+  <link rel="manifest" href="/manifest.webmanifest"></head>
+  <body style="overscroll-behavior-x: none; overflow-x: hidden; background-color: #000000;">
+    <div id="root"></div>
+    
+  </body>
+</html>

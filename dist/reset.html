@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset - X88 Colaborador</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #0FB841, #0DA335);
+      color: white;
+    }
+    .container {
+      text-align: center;
+      padding: 2rem;
+    }
+    button {
+      background: white;
+      color: #0FB841;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔄 Reset de Dados</h1>
+    <p>Clique no botão abaixo para limpar todos os dados e reiniciar com dados fictícios.</p>
+    <button onclick="resetData()">Resetar Dados</button>
+    <p id="message" style="margin-top: 1rem;"></p>
+  </div>
+
+  <script>
+    function resetData() {
+      localStorage.clear();
+      document.getElementById('message').textContent = '✅ Dados limpos! Redirecionando...';
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
